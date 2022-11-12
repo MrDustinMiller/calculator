@@ -9,9 +9,8 @@ let numTwo = 0;
 let result = 0;
 
 let clearScreen = () => {
-  //issue with clearing data. its setting and keeping numone and numtwo at 0
-  //not updating when its clicked next
   display.value = "";
+  operatorClicked = false;
   numOne = 0;
   numTwo = 0;
   result = 0;
@@ -31,26 +30,28 @@ let backSpace = () => {
 };
 
 let addition = (numOne, numTwo) => {
-  result = Number(numOne) + Number(numTwo);
+  result = numOne + numTwo;
 };
 
 let subtraction = (numOne, numTwo) => {
-  result = Number(numOne) - Number(numTwo);
+  result = numOne - numTwo;
 };
 
-let multiplication = (array) => {
+let multiplication = (numOne, numTwo) => {
+  result = numOne * numTwo;
   //   let nums = Array.from(array);
   //   let result = nums.reduce((accumulator, nextItem) => accumulator * nextItem);
   //   console.log(array);
   //   display.value = result;
 };
 
-let division = () => {};
+let division = (numOne, numTwo) => {
+  result = numOne / numTwo;
+};
 
 let operate = (operator, numOne, numTwo) => {
   switch (operator) {
     case "+":
-      console.log(operator, numOne, numTwo);
       addition(numOne, numTwo);
       break;
     case "-":
@@ -64,13 +65,12 @@ let operate = (operator, numOne, numTwo) => {
       break;
 
     default:
-      alert("No valid operator selected.");
       break;
   }
 };
 
 function test() {
-  console.log(numOne, numTwo);
+  //make sure we have to numbers to do an expression with
   if (numOne && numTwo > 0) {
     operate(operator, numOne, numTwo);
   }
@@ -78,20 +78,25 @@ function test() {
 
 numbers.forEach((element) => {
   element.addEventListener("click", (e) => {
-    display.value += e.target.value; //plus operation
+    display.value += e.target.value;
 
     if (operatorClicked != true) {
-      numOne += e.target.value; //issue with zerores being in front
+      numOne += Number(e.target.value);
     }
 
+    //if operatorClicked = true then add the inputted values to our second num, not the first.
     if (numOne > 0 && operatorClicked != false) {
-      display.value = numOne + `${operator}`;
-      numTwo += e.target.value;
+      numTwo += Number(e.target.value);
       display.value = numOne + `${operator}` + numTwo;
     }
 
+    //divide by zero error message
+    if (operatorClicked != false && operator === "/" && numTwo === 0) {
+      display.value = numOne + `${operator}`;
+      alert("You can't divide by 0 silly");
+    }
+
     test();
-    //console.log(e.target.value);
   });
 });
 
@@ -107,16 +112,28 @@ deleteBtns.forEach((element) => {
 
 operations.forEach((element) => {
   element.addEventListener("click", (e) => {
+    //no operator had been clicked yet, only equals or decimal has
     if (e.target.value === "=" || e.target.value === ".") {
       operatorClicked === false;
-    } else operatorClicked = true;
+    } else if ((operatorClicked = true)) {
+      //has to be an operator clicked if its not "="/".". set operatorClicked to TRUE
+      operator = e.target.value;
+      display.value += `${operator}`;
+    }
 
-    if (e.target.value === "=" && operatorClicked != false) {
+    //display error msg if user clicks a operand and operator but no second operand.
+    //extra operator != condition so we can differeniate between equal message and
+    //divide by zero message.
+    if (e.target.value === "=" && numTwo === 0 && operator != "/") {
+      alert(
+        "Please select operation and a second number before hitting equals"
+      );
+    }
+
+    //if numTwo is equal to 0 then we have no final equation to display
+    if (e.target.value === "=" && operatorClicked != false && numTwo != 0) {
       display.value =
         numOne + " " + `${operator}` + " " + numTwo + " " + "=" + " " + result;
     }
-    operator = e.target.value;
-
-    //console.log(operator);
   });
 });
