@@ -149,10 +149,12 @@ let array = new Array;
 
  let checkForFullEquation = (e) => {
     //error msg
-    if (e.target.value === "=" && numberTwo === 0 && operator != "/") {
+    if (e.target.value === "=" && numberTwo === 0 && operator != "/" && operator != "*") {
         alert(
           "Please select a operation and a second number before hitting equals"
         );
+      } else if (e.target.value = "*" && numberTwo === 0) {
+        display.value = 0;
       }
  }
 
