@@ -1,41 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 12em;
+
+}
+
 .outer-wrapper {
-    border: 2px solid black;
+    background-color: rgb(77, 138, 138);
+    /* border: 2px solid black; */
     padding: 1em;
     max-width: 350px;
+    min-height: 420px;
 }
 
 .inner-wrapper {
-    border: 2px solid red;
+    background-color: rgb(238, 185, 12);
+    min-height: 420px;
+    /* border: 2px solid red; */
 }
 
-.test>* {
+.container>* {
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
     justify-content: center;
-
+    align-content: stretch;
+    flex-wrap: wrap;
 }
 
 .numbers>* {
-    margin: 5px;
+    flex-basis: 90px;
+    flex-grow: 1;
+    margin: 1px;
     height: 50px;
     width: 52px;
 }
 
+.equals>* {
+    flex-basis: 90px;
+    flex-grow: 1;
+    margin: 1px;
+    height: 50px;
+    width: 170px;
+}
+
 .operations>* {
+    flex-basis: 70px;
+    flex-grow: 1;
+    margin: 1px;
     height: 50px;
     width: 50px;
 }
 
 .delete-buttons>* {
-    margin: 10px;
+    margin: 1px;
     height: 50px;
     width: 105px;
 }
 
 .display {
+    background-color: rgb(255, 255, 255);
     height: 50px;
-    width: 337px;
+    width: 347px;
     text-align: center;
-    border: 3px solid blue;
+    /* border: 3px solid blue; */
 }
