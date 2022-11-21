@@ -65,7 +65,8 @@ let array = new Array;
   };
   
   let division = (numOne, numTwo) => {
-    result = numOne / numTwo;
+    result = numOne / numTwo
+    result = Math.round(result * 100) / 100;
     display.value += " " + "=" + " " + result;
     if (continuedOperation === true) {
         display.value = result;
