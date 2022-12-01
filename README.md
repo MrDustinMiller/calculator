@@ -12,6 +12,8 @@ custom functions.
 - [x] Divide
 - [x] Add
 - [x] Subtract
+- [x] Clear
+- [x] Backspace
 
 
 ## Screenshots
