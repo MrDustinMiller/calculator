@@ -16,7 +16,6 @@ custom functions.
 
 ## Screenshots
 
-- [Screenshots & Presentation]
 ![Screenshot 2022-11-30 232709](https://user-images.githubusercontent.com/97045700/204973880-da2f3e4f-7325-41f5-9f60-ed377bc42152.jpg)
 ![Screenshot 2022-11-30 232753](https://user-images.githubusercontent.com/97045700/204973890-bd399a4f-89d3-4642-af8f-6e643fa51d91.jpg)
 
