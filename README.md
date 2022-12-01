@@ -17,8 +17,8 @@ custom functions.
 ## Screenshots
 
 - [Screenshots & Presentation]
-![Screenshot 2022-11-30 232709](https://user-images.githubusercontent.com/97045700/204972992-411b2c0e-0138-4d20-8df5-73d34985aca9.jpg)
-![Screenshot 2022-11-30 232753](https://user-images.githubusercontent.com/97045700/204973024-cf83cabe-4dcb-4ddd-a64f-8e6bd8c17da7.jpg)
+![Screenshot 2022-11-30 232709](https://user-images.githubusercontent.com/97045700/204973880-da2f3e4f-7325-41f5-9f60-ed377bc42152.jpg)
+![Screenshot 2022-11-30 232753](https://user-images.githubusercontent.com/97045700/204973890-bd399a4f-89d3-4642-af8f-6e643fa51d91.jpg)
 
 
 ## Technologies 
